@@ -3,12 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "start:es": "ng serve --configuration=es",
-    "start:en": "ng serve --configuration=en"
+    "start:en": "ng serve --configuration=en",
+    "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "postinstall": "ng build --prod"
+  },
+  "engines": {
+    "node": "16.15.0",
+    "npm": "8.8.0"
   },
   "private": true,
   "dependencies": {
