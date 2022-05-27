@@ -1,0 +1,43 @@
+<app-home></app-home>
+<br>
+<table class="table table-sm table-bordered table-striped text-center">
+  <thead>
+    <tr>
+      <th scope="col">
+        Id
+      </th>
+      <th scope="col">
+        Producto
+      </th>
+      <th scope="col">
+        Ventas totales en $
+      </th>
+      <th scope="col">
+        Cantidad de productos vendidos
+      </th>
+      <th scope="col">
+        Cantidad actual de existencias
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of inventory" >
+       <td>{{ product.idproducto }}</td>
+       <td [ngStyle]="product.stock > 1
+        && product.stock <= 201 ? {background: 'red'} : product.stock == 204 ?
+        {background: 'yellow'} : {background: ''}">{{ product.nombre }}</td>
+       <td>{{ product.ventastotales }}</td>
+       <td>{{ product.cantidadvendidos }}</td>
+       <td [ngStyle]="product.stock > 1
+        && product.stock <= 201 ? {background: 'red'} : product.stock == 204 ?
+        {background: 'yellow'} : {background: ''}">{{ product.stock }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="font-weight: bold;">Total</td>
+      <td style="font-weight: bold;">{{ sumaVentasTotales }}</td>
+      <td style="font-weight: bold;">{{ sumaCantidadVendidos }}</td>
+      <td style="font-weight: bold;">{{ sumaStock }}</td>
+    </tr>
+  </tbody>
+</table>

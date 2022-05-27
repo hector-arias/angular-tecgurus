@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularTecGurus</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+  crossorigin="anonymous"
+  />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <script>
+    posicionarMenu();
+
+    $(window).scroll(function() {
+        posicionarMenu();
+    });
+
+    function posicionarMenu() {
+        var altura_del_header = $('.header').outerHeight(true);
+        var altura_del_menu = $('.menu').outerHeight(true);
+
+        if ($(window).scrollTop() >= altura_del_header){
+            $('.menu').addClass('fixed');
+            $('.wrapper').css('margin-top', (altura_del_menu) + 'px');
+            $('.product-listc').css('padding-top', '75px');
+        }
+         else {
+            $('.menu').removeClass('fixed');
+            $('.wrapper').css('margin-top', '0');
+            $('.product-listc').css('padding-top', '0px');
+        }
+    }
+
+    </script>
+
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

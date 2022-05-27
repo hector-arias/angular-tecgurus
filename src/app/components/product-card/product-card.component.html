@@ -1,0 +1,12 @@
+<div *ngIf="product.nombre" class="card">
+  <img class="card-img-top" style="height: 150px;"
+  src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg"
+  alt="{{ product.nombre}}">
+  <div class="card-body">
+    <h5 class="card-title">{{product.nombre}}</h5>
+    <p class="card-text">{{ product.precio | currency: 'USD'}}</p>
+  </div>
+  <div class="card-footer">
+      <button i18n (click)="addCart()" class="btn btn-block btn-secondary">Añadir</button>
+  </div>
+</div>

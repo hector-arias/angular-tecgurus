@@ -1,0 +1,24 @@
+<h4 class="d-flex justify-content-between aling-items-center mb-3">
+  <span i18n class="text-muted"> Mi carrito de compras</span>
+  <span class="badge badge-primary badge-pill">{{ products.length }} </span>
+</h4>
+<ul class="list-group mb-3">
+  <li
+   class="list-group-item d-flex justify-content-between lh-condensed"
+   *ngFor="let product of products">
+    <div>
+      <h6 class="my-0"> {{product.nombre}}</h6>
+    </div>
+    <span class="text-muted"> {{product.precio}} </span>
+    <button class="btn btn-secondary" (click)="deleteProductCart(product)" >Eliminar</button>
+  </li>
+  <hr/>
+  <li class="list-group-item d-flex justify-content-between">
+      <span i18n>Total</span>
+      <strong> {{ totalValue }}</strong>
+  </li>
+  <a i18n class="btn btn-primary" [routerLink]="['/products']">
+    Continuar comprando
+  </a>
+  <a i18n class="btn btn-secondary" [routerLink]="['/checkouts']">Comprar</a>
+</ul>
